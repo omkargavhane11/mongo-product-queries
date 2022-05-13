@@ -212,7 +212,8 @@ db.product.find({ product_material: "Soft" }).pretty();
 db.product.find({ $or: [{ product_color: "indigo" }, { product_price: 492.00 }] })
 
 // 10. Delete the products which product price value are same
-db.product.deleteMany({ product_price: 47 }).pretty();
+// since 47 is the price of more than one product, 47 is used in query
+db.product.deleteMany({ product_price: 47 });
 
 
 
